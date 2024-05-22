@@ -14,10 +14,7 @@ all_states = data.state.tolist()
 guessed_states = []
 
 def display_missed_states():
-    missed_states = []
-    for state in all_states:
-        if state not in guessed_states:
-            missed_states.append(state)
+    missed_states = [state for state in all_states if state not in guessed_states]
     data_dict = {
         "missed_states": missed_states
     }
